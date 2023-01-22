@@ -1,0 +1,25 @@
+#add {}
+
+#div_form {
+  vertical-align: middle;
+  text-align: center;
+}
+
+#tb {
+  text-align: center;
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#div_tb th,
+#div_tb td {
+  /* text-align: center; */
+  vertical-align: middle;
+}
+
+td img {
+  max-width: 100%;
+  height: auto;
+}

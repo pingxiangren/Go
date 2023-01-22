@@ -1,0 +1,28 @@
+{{ define "content"}}
+<form action="/devices/add" method="POST" enctype="application/x-www-form-urlencoded">
+    <!-- <div class="form-group row">
+        <label for="id" class="col-sm-2 col-form-label">ID</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="id" name="id" maxlength="32" required>
+        </div>
+    </div> -->
+    <div class="form-group row">
+        <!-- label for = "input 里的 id" -->
+        <label for="title" class="col-sm-2 col-form-label">资产编号</label> 
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" name="title" maxlength="50" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="belongs" class="col-sm-2 col-form-label">设备种类</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="belongs" name="belongs" maxlength="10" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">保存</button>
+        </div>
+    </div>
+</form>
+{{ end }}

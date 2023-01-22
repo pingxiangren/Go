@@ -1,0 +1,86 @@
+{{ define "content"}}
+
+<head>
+  <title>list</title>
+  <link type="text/css" href="/wwwroot/static/list.css" rel="stylesheet" />
+  <script src="/wwwroot/static/list.js"></script>
+</head>
+
+<body>
+  <!-- label for = "input 里的 id" -->
+  <form action="/devices/search" method="GET" enctype="application/x-www-form-urlencoded">
+    <div id="div_form">
+      <label for="assetNo">资产编号：</label>
+      <input type="text" id="assetNo" name="assetno" maxlength="50" >
+      <label for="devType">设备种类：</label>
+      <input type="text" id="devType" name="devtype" maxlength="50" >
+      <label for="devStatus">设备状态：</label>
+
+      <input type="text" id="devStatus" name="devstatus" list="status_list" maxlength="50"  />
+      <datalist id="status_list">
+        <option value="在库" >在库</option>
+        <option value="借出">借出</option>
+      </datalist>
+        
+
+      <button type="submit" class="btn btn-primary float-right mb-3" id="search">查询</button>
+    </div>
+  </form>
+
+  <div id="div_tb">
+    <table id="tb" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <!-- <th scope="col">设备序号</th> -->
+          <th scope="col">资产编号</th>
+          <th scope="col">设备种类</th>
+          <th scope="col">设备状态</th>
+          <th scope="col">设备图片</th>
+        </tr>
+        <!-- <tr>
+      <th align="center">序号</th>
+      <th align="center">资产编号</th>
+      <th align="center">设备种类</th>
+      <th align="center">设备状态</th>
+      <th align="center">设备图片</th>
+    </tr>> -->
+      </thead>
+      <tbody>
+        {{ range $i, $c := . }}
+        <tr>
+          <th scope="row">{{ $i | add 1 }}</th>
+          <!-- <td>{{ $c.ID }}</td> -->
+          <td>{{ $c.AssetNo }}</td>
+          <td>{{ $c.DevType }}</td>
+          <td>{{ $c.DevStatus }}</td>
+          <td id="SPicture"><img id="cellImg" alt="SPic" src="data:image/png;base64,{{ $c.SPicture }}"></td>
+          <!-- <td>
+          <a href="/companies/edit/{{ $c.ID }}" target="_self">编辑</a>
+          <a class="del-btn ml-2" href="javascript:void(0)" data-id="{{$c.ID}}">删除</a>
+        </td> -->
+        </tr>
+        {{ end }}
+
+        <script>
+          $(document).ready(() => {
+            $(".del-btn").bind("click", (event) => {
+              if (confirm("确认删除？")) {
+                $.ajax({
+                  url: `/companies/delete/${event.target.dataset.id}`,
+                  type: "DELETE",
+                  success: function (result) {
+                    window.location.href = "/companies";
+                  },
+                });
+              }
+            });
+          });
+        </script>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+
+{{ end }}

@@ -1,0 +1,8 @@
+github.com/aWildProgrammer/fconf v0.0.0-20180508142436-83e728b760bc h1:5nLgwqRwGn26c6I9JbT3WBYXCQaShAii/+ovY98HuF4=
+github.com/aWildProgrammer/fconf v0.0.0-20180508142436-83e728b760bc/go.mod h1:f4uVxnsY8jUNfq3f9l8iybu2BtMawtk/eTK6clNurO0=
+github.com/go-sql-driver/mysql v1.7.0 h1:ueSltNNllEqE3qcWBTD0iQd3IpL/6U+mJxLkazJ7YPc=
+github.com/go-sql-driver/mysql v1.7.0/go.mod h1:OXbVy3sEdcQ2Doequ6Z5BW6fXNQTmx+9S1MCJN5yJMI=
+github.com/lib/pq v1.8.0 h1:9xohqzkUwzR4Ga4ivdTcawVS89YSDVxXMa3xJX3cGzg=
+github.com/lib/pq v1.8.0/go.mod h1:AlVN5x4E4T544tWzH6hKfbfQvm3HdbOxrmggDNAPY9o=
+github.com/lib/pq v1.10.7 h1:p7ZhMD+KsSRozJr34udlUrhboJwWAgCg34+/ZZNvZZw=
+github.com/lib/pq v1.10.7/go.mod h1:AlVN5x4E4T544tWzH6hKfbfQvm3HdbOxrmggDNAPY9o=
